@@ -34,3 +34,29 @@ interface ScreenTemplates extends ClientBundle {
   
   ```
   but the returned HTML content will be minified.
+
+# How to use
+
+The artefact isn't available on maven central, so you have to add a repository:
+
+```xml
+<repositories>
+	<repository>
+		<id>gwt-sl-mvn-repo</id>
+		<url>https://raw.github.com/ggeorgovassilis/gwt-htmlresource/mvn-repo/</url>
+		<snapshots>
+			<enabled>true</enabled>
+			<updatePolicy>always</updatePolicy>
+		</snapshots>
+	</repository>
+</repositories>
+```
+and then use the dependency
+
+```
+<dependency>
+	<groupId>com.georgovassilis</groupId>
+	<artifactId>gwt-htmlresource</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+</dependency>
+```
