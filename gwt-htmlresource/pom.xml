@@ -12,8 +12,19 @@
 			<name>Temporary Staging Repository</name>
 			<url>file://${project.build.directory}/mvn-repo</url>
 		</repository>
+		<snapshotRepository>
+			<id>internal.repo</id>
+			<name>Temporary Staging Repository</name>
+			<url>file://${project.build.directory}/mvn-repo-snapshots</url>
+		</snapshotRepository>	
 	</distributionManagement>
-	
+
+	<scm>
+		<developerConnection>scm:git:git@github.com:ggeorgovassilis/gwt-htmlresource.git</developerConnection>
+		<connection>scm:git:https://github.com/ggeorgovassilis/gwt-htmlresource.git</connection>
+		<url>https://github.com/ggeorgovassilis/gwt-htmlresource</url>
+	</scm>
+
 	<properties>
 		<github.global.server>github-gwt-htmlresource</github.global.server>
 	</properties>
