@@ -1,0 +1,2 @@
+# gwthtmlresource
+HTML resource generator
