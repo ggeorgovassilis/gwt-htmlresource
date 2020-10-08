@@ -60,3 +60,6 @@ and then use the dependency
 	<version>0.0.1-SNAPSHOT</version>
 </dependency>
 ```
+## Credits
+
+This code is based on the TextResource and TextResourceGenerator classes of the [GWT project](http://www.gwtproject.org/)
