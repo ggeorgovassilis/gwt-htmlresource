@@ -53,7 +53,7 @@ The artefact isn't available on maven central, so you have to add a repository:
 ```
 and then use the dependency
 
-```
+```xml
 <dependency>
 	<groupId>com.georgovassilis</groupId>
 	<artifactId>gwt-htmlresource</artifactId>
