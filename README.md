@@ -1,6 +1,6 @@
 # gwthtmlresource
 
-A HTML resource generator for GWT. 
+A HTML resource generator for GWT. License [APL 2](LICENSE)
 
 ## What
 
