@@ -57,9 +57,16 @@ and then use the dependency
 <dependency>
 	<groupId>com.georgovassilis</groupId>
 	<artifactId>gwt-htmlresource</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 </dependency>
 ```
+
+## Releases
+
+For GWT prior to 2.11 use 0.0.1-SNAPSHOT
+
+For GWT 2.11 and later use 0.0.2-SNAPSHOT
+
 ## Credits
 
 This code is based on the TextResource and TextResourceGenerator classes of the [GWT project](http://www.gwtproject.org/)
