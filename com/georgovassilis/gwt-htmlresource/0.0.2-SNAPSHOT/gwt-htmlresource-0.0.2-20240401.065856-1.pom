@@ -1,0 +1,142 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.georgovassilis</groupId>
+	<artifactId>gwt-htmlresource</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+
+	<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Temporary Staging Repository</name>
+			<url>file://${project.build.directory}/mvn-repo</url>
+		</repository>
+		<snapshotRepository>
+			<id>internal.repo</id>
+			<name>Temporary Staging Repository</name>
+			<url>file://${project.build.directory}/mvn-repo-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<developerConnection>
+			scm:git:git@github.com:ggeorgovassilis/gwt-htmlresource.git</developerConnection>
+		<connection>
+			scm:git:https://github.com/ggeorgovassilis/gwt-htmlresource.git</connection>
+		<url>https://github.com/ggeorgovassilis/gwt-htmlresource</url>
+	</scm>
+
+	<properties>
+		<github.global.server>github-gwt-htmlresource</github.global.server>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.gwtproject</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.gwtproject</groupId>
+			<artifactId>gwt-dev</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.htmlcompressor</groupId>
+			<artifactId>htmlcompressor</artifactId>
+			<version>1.5.2</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.java</include>
+					<include>**/*.gwt.xml</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>net.ltgt.gwt.maven</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>1.1.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<deploy>${project.build.directory}/deploy</deploy>
+					<outputDirectory>${project.basedir}/site</outputDirectory>
+					<moduleName>com.georgovassilis.gwthtmlresource.htmlresource</moduleName>
+					<compilerArgs>
+						<compilerArg>-strict</compilerArg>
+					</compilerArgs>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<altDeploymentRepository>
+						internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.12</version>
+				<configuration>
+					<message>Maven artifacts for ${project.version}</message>
+					<!-- disable webpage processing -->
+					<noJekyll>true</noJekyll>
+					<!-- matches distribution management repository url above -->
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+					<!-- remote branch name -->
+					<branch>refs/heads/mvn-repo</branch>
+					<!-- If you remove this then the old artifact will be
+					removed and new 
+						one will replace. But with the merge tag you can just release by changing 
+						the version -->
+					<merge>true</merge>
+					<includes>
+						<include>**/*</include>
+					</includes>
+					<!-- github repo name -->
+					<repositoryName>gwt-htmlresource</repositoryName>
+					<!-- github username -->
+					<repositoryOwner>ggeorgovassilis</repositoryOwner>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

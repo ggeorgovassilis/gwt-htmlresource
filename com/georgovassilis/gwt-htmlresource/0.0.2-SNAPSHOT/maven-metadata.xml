@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.georgovassilis</groupId>
+  <artifactId>gwt-htmlresource</artifactId>
+  <versioning>
+    <lastUpdated>20240401065856</lastUpdated>
+    <snapshot>
+      <timestamp>20240401.065856</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.0.2-20240401.065856-1</value>
+        <updated>20240401065856</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.0.2-20240401.065856-1</value>
+        <updated>20240401065856</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>0.0.2-20240401.065856-1</value>
+        <updated>20240401065856</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>0.0.2-SNAPSHOT</version>
+</metadata>
